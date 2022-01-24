@@ -64,11 +64,11 @@ function generatePlane(){
       const y = array[i+1];
       const z = array[i+2];
       
-      array[i+2] = z + (Math.random()-0.5)*3 ;
-      array[i+1] = y + (Math.random() - 0.5)*2;
+      array[i+2] = z + (Math.random()-0.5)* 5 ;
+      array[i+1] = y + (Math.random() - 0.5)*3;
       array[i] = x + (Math.random() - 0.5);
     }
-    randomValues.push(Math.random()-0.5);
+    randomValues.push(Math.random() * Math.PI *2);
 }
 
 planeMesh.geometry.attributes.position.originalPosition = planeMesh.geometry.attributes.position.array;
@@ -161,8 +161,6 @@ function animate() {
     //console.log(intersects[0].object.geometry.attributes);
     const {color} = intersects[0].object.geometry.attributes;
     //intersects[0].object.geometry.attributes.color.setX(intersects[0].face.a, 0);
-
-
 
     intersects[0].object.geometry.attributes.color.needsUpdate = true;
 
